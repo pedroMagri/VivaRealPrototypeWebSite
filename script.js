@@ -77,7 +77,6 @@ function hydrateResultsPage() {
 
   const locationInput = document.querySelector('[data-location-input]');
   const applyButton = document.querySelector('[data-location-apply]');
-  const commonButton = document.querySelector('[common-button]');
 
   function applyLocation(locationValue) {
     const cleanedValue = locationValue.trim();
@@ -108,4 +107,33 @@ function hydrateResultsPage() {
   applyLocation(paramLocation || '');
 }
 
-document.addEventListener('DOMContentLoaded', hydrateResultsPage);
+function setupFilterPills() {
+  const filterGroups = document.querySelectorAll('.filter-options');
+  const clearButtons = document.querySelectorAll('[data-clear-filters]');
+
+  filterGroups.forEach((group) => {
+    group.addEventListener('click', (event) => {
+      const target = event.target.closest('.filter-pill');
+      if (!target || !group.contains(target)) return;
+
+      group.querySelectorAll('.filter-pill').forEach((pill) => {
+        pill.classList.toggle('is-active', pill === target);
+      });
+    });
+  });
+  
+  clearButtons.forEach((button) => {
+    button.addEventListener('click', () => {
+      filterGroups.forEach((group) => {
+        group.querySelectorAll('.filter-pill').forEach((pill) => {
+          pill.classList.remove('is-active');
+        });
+      });
+    });
+  });
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+  hydrateResultsPage();
+  setupFilterPills();
+});
