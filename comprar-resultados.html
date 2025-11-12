@@ -11,10 +11,10 @@
 </head>
 <body class="results-page" data-results="comprar">
   <header class="topbar">
-    <div class="brand">
+    <a class="brand" href="index.html">
       <div class="logo-simbolo" aria-hidden="true"></div>
       <span class="logo-text">VivaReal</span>
-    </div>
+    </a>
     <div class="actions">
       <button class="ghost">Criar Conta</button>
       <button class="ghost">Entrar</button>
@@ -37,11 +37,6 @@
           <button type="button" class="filter-pill">Kitnet/Studio</button>
           <button type="button" class="filter-pill">Terreno</button>
         </div>
-      </div>
-
-      <div class="filter-group">
-        <h3 class="filter-title">Localização</h3>
-        <input type="text" placeholder="Cidade, bairro ou endereço" data-filter-location>
       </div>
 
       <div class="filter-group">
@@ -82,11 +77,8 @@
       </div>
 
       <button class="secondary" type="button">Limpar filtros</button>
-      <button class="ghost-rounded" type="button">Mapa</button>
-      <div class="filters-extra">
-        <a href="#">Criar alerta</a>
-        <a href="#">Salvar busca</a>
-      </div>
+      <button class="map" type="button">Mapa</button>
+      <button class="alert" type="button">Criar Alerta</button>
     </aside>
 
     <section class="results-panel">
@@ -100,6 +92,14 @@
           <button class="map" type="button">Mapa</button>
         </div>
       </header>
+
+      <section class="location-control" aria-label="Atualizar localização">
+        <h2>Atualize a localização da busca</h2>
+        <div class="location-control-form">
+          <input type="text" placeholder="Cidade, bairro ou endereço" data-location-input>
+          <button class="primary" type="button" data-location-apply>Aplicar</button>
+        </div>
+      </section>
 
       <div class="properties-list">
         <article class="property-card">
@@ -120,6 +120,7 @@
             <div class="property-actions">
               <button class="see-more" type="button">Ver detalhes</button>
               <button class="favorite" type="button">♡ Favoritar</button>
+              <button class="contact" type="button">Entrar em contato</button>
             </div>
           </div>
         </article>
@@ -142,6 +143,7 @@
             <div class="property-actions">
               <button class="see-more" type="button">Ver detalhes</button>
               <button class="favorite" type="button">♡ Favoritar</button>
+              <button class="contact" type="button">Entrar em contato</button>
             </div>
           </div>
         </article>
@@ -164,6 +166,7 @@
             <div class="property-actions">
               <button class="see-more" type="button">Ver detalhes</button>
               <button class="favorite" type="button">♡ Favoritar</button>
+              <button class="contact" type="button">Entrar em contato</button>
             </div>
           </div>
         </article>
