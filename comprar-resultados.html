@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <title>VivaReal – Buscar imóveis à venda</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body class="results-page" data-results="comprar">
+  <header class="topbar">
+    <a class="brand" href="index.html">
+      <div class="logo-simbolo" aria-hidden="true"></div>
+      <span class="logo-text">VivaReal</span>
+    </a>
+    <div class="actions">
+      <button class="ghost">Criar Conta</button>
+      <button class="ghost">Entrar</button>
+    </div>
+  </header>
+
+  <nav class="result-tabs" aria-label="Alternar tipo de busca">
+    <a class="tab active" href="comprar-resultados.html">Comprar</a>
+    <a class="tab" href="alugar-resultados.html">Alugar</a>
+  </nav>
+
+  <main class="results-layout">
+    <aside class="filters-panel" aria-label="Filtros de busca">
+      <div class="filter-group">
+        <h3 class="filter-title">Tipo de imóvel</h3>
+        <div class="filter-options">
+          <button type="button" class="filter-pill is-active">Apartamento</button>
+          <button type="button" class="filter-pill">Casa</button>
+          <button type="button" class="filter-pill">Cobertura</button>
+          <button type="button" class="filter-pill">Kitnet/Studio</button>
+          <button type="button" class="filter-pill">Terreno</button>
+        </div>
+      </div>
+
+      <div class="filter-group">
+        <h3 class="filter-title">Faixa de preço (R$)</h3>
+        <div class="filter-range">
+          <input type="number" placeholder="Mín" min="0">
+          <span>até</span>
+          <input type="number" placeholder="Máx" min="0">
+        </div>
+      </div>
+
+      <div class="filter-group">
+        <h3 class="filter-title">Quartos</h3>
+        <div class="filter-options">
+          <button type="button" class="filter-pill is-active">2</button>
+          <button type="button" class="filter-pill">1</button>
+          <button type="button" class="filter-pill">3</button>
+          <button type="button" class="filter-pill">4+</button>
+        </div>
+      </div>
+
+      <div class="filter-group">
+        <h3 class="filter-title">Banheiros</h3>
+        <div class="filter-options">
+          <button type="button" class="filter-pill is-active">2</button>
+          <button type="button" class="filter-pill">1</button>
+          <button type="button" class="filter-pill">3+</button>
+        </div>
+      </div>
+
+      <div class="filter-group">
+        <h3 class="filter-title">Vagas de garagem</h3>
+        <div class="filter-options">
+          <button type="button" class="filter-pill">1</button>
+          <button type="button" class="filter-pill is-active">2</button>
+          <button type="button" class="filter-pill">3+</button>
+        </div>
+      </div>
+
+      <button class="secondary" type="button">Limpar filtros</button>
+      <button class="map" type="button">Mapa</button>
+      <button class="alert" type="button">Criar Alerta</button>
+    </aside>
+
+    <section class="results-panel">
+      <header class="search-header">
+        <div>
+          <h1 data-summary-location>Florianópolis - SC, Brasil</h1>
+          <p class="search-subtitle" data-summary-subtitle>Resultados com 2 quartos e 2 banheiros</p>
+        </div>
+        <div class="search-actions">
+          <button class="alert" type="button">Criar Alerta</button>
+          <button class="map" type="button">Mapa</button>
+        </div>
+      </header>
+
+      <section class="location-control" aria-label="Atualizar localização">
+        <h2>Atualize a localização da busca</h2>
+        <div class="location-control-form">
+          <input type="text" placeholder="Cidade, bairro ou endereço" data-location-input>
+          <button class="primary" type="button" data-location-apply>Aplicar</button>
+        </div>
+      </section>
+
+      <div class="properties-list">
+        <article class="property-card">
+          <div class="property-media">
+            <img src="https://images.unsplash.com/photo-1568600891621-2b0390ef9a9e?auto=format&fit=crop&w=400&q=60" alt="Sala de estar iluminada de um apartamento" />
+          </div>
+          <div class="property-content">
+            <p class="property-address">R. Abílio Costa, 135, Santa Mônica, Florianópolis - SC</p>
+            <div class="property-meta">
+              <strong>R$ 4.000.000</strong>
+              <span>60 m²</span>
+            </div>
+            <div class="property-stats">
+              <span>2 Quartos</span>
+              <span>2 Banheiros</span>
+              <span>2 Vagas</span>
+            </div>
+            <div class="property-actions">
+              <button class="see-more" type="button">Ver detalhes</button>
+              <button class="favorite" type="button">♡ Favoritar</button>
+              <button class="contact" type="button">Entrar em contato</button>
+            </div>
+          </div>
+        </article>
+
+        <article class="property-card">
+          <div class="property-media">
+            <img src="https://images.unsplash.com/photo-1505691938895-1758d7feb511?auto=format&fit=crop&w=400&q=60" alt="Fachada moderna de uma casa" />
+          </div>
+          <div class="property-content">
+            <p class="property-address">Av. Jornalista Rubens de Arruda Ramos, 400, Centro, Florianópolis - SC</p>
+            <div class="property-meta">
+              <strong>R$ 3.270.000</strong>
+              <span>120 m²</span>
+            </div>
+            <div class="property-stats">
+              <span>3 Quartos</span>
+              <span>3 Banheiros</span>
+              <span>2 Vagas</span>
+            </div>
+            <div class="property-actions">
+              <button class="see-more" type="button">Ver detalhes</button>
+              <button class="favorite" type="button">♡ Favoritar</button>
+              <button class="contact" type="button">Entrar em contato</button>
+            </div>
+          </div>
+        </article>
+
+        <article class="property-card">
+          <div class="property-media">
+            <img src="https://images.unsplash.com/photo-1576941089067-2de3c901e126?auto=format&fit=crop&w=400&q=60" alt="Varanda de um apartamento com vista para o mar" />
+          </div>
+          <div class="property-content">
+            <p class="property-address">R. Deputado Antônio Edu Vieira, 2150, Pantanal, Florianópolis - SC</p>
+            <div class="property-meta">
+              <strong>R$ 2.150.000</strong>
+              <span>95 m²</span>
+            </div>
+            <div class="property-stats">
+              <span>2 Quartos</span>
+              <span>2 Banheiros</span>
+              <span>1 Vaga</span>
+            </div>
+            <div class="property-actions">
+              <button class="see-more" type="button">Ver detalhes</button>
+              <button class="favorite" type="button">♡ Favoritar</button>
+              <button class="contact" type="button">Entrar em contato</button>
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <button class="help">AJUDA</button>
+  <script src="script.js"></script>
+</body>
+</html>
