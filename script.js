@@ -77,6 +77,7 @@ function hydrateResultsPage() {
 
   const locationInput = document.querySelector('[data-location-input]');
   const applyButton = document.querySelector('[data-location-apply]');
+  const commonButton = document.querySelector('[common-button]');
 
   function applyLocation(locationValue) {
     const cleanedValue = locationValue.trim();
