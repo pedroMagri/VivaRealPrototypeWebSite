@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <title>VivaReal – Detalhes do imóvel</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+    <style>
+      /* estilos só pros elementos novos que você pediu */
+      .back-link {
+        display: inline-flex;
+        align-items: center;
+        gap: 6px;
+        margin: 10px auto 0;
+        max-width: 1180px;
+        color: #0a84ff;
+        text-decoration: none;
+        font-weight: 600;
+      }
+      .back-link:hover {
+        text-decoration: underline;
+      }
+      .hero-bills {
+        display: flex;
+        flex-direction: column;
+        gap: 3px;
+        font-size: 12px;
+        color: #0a4ea1;
+        text-align: left;
+      }
+      /* garante que o preço e os valores fiquem no mesmo eixo */
+      .hero-meta {
+        align-items: flex-start;
+      }
+      @media (max-width: 720px) {
+        .hero-bills {
+          text-align: left;
+        }
+      }
+    </style>
+  </head>
+  <body class="property-detail">
+    <header class="topbar">
+      <a class="brand" href="index.html">
+        <div class="logo-simbolo" aria-hidden="true"></div>
+        <span class="logo-text">VivaReal</span>
+      </a>
+      <a href="comprar-resultados.html" class="back-link"
+        >← Voltar para resultados</a
+      >
+      <div class="actions">
+        <button class="ghost">Criar Conta</button>
+        <button class="ghost">Entrar</button>
+      </div>
+    </header>
+
+    <main class="detail-layout">
+      <section class="detail-hero">
+        <div class="hero-gallery">
+          <img
+            class="hero-main"
+            src="https://images.unsplash.com/photo-1505691723518-36a5ac3be353?auto=format&fit=crop&w=1200&q=60"
+            alt="Sala de estar ampla com vista para o mar"
+          />
+          <div class="hero-thumbs">
+            <img
+              src="https://images.unsplash.com/photo-1576678927484-cc907957088c?auto=format&fit=crop&w=400&q=60"
+              alt="Suíte master do apartamento"
+            />
+            <img
+              src="https://images.unsplash.com/photo-1512918728675-ed5a9ecdebfd?auto=format&fit=crop&w=400&q=60"
+              alt="Cozinha planejada com acabamento moderno"
+            />
+            <img
+              src="https://images.unsplash.com/photo-1484154218962-a197022b5858?auto=format&fit=crop&w=400&q=60"
+              alt="Varanda gourmet com vista para o mar"
+            />
+            <img
+              src="https://images.unsplash.com/photo-1489171078254-c3365d6e359f?auto=format&fit=crop&w=400&q=60"
+              alt="Área de lazer do condomínio"
+            />
+          </div>
+        </div>
+        <div class="hero-summary">
+          <!-- REMOVIDO: <span class="detail-badge">À venda</span> -->
+          <h1>Apartamento vista mar com varanda gourmet</h1>
+          <p class="detail-address">
+            Avenida Beira-Mar Norte, 4000 – Centro, Florianópolis - SC
+          </p>
+          <div class="hero-meta">
+            <strong>R$ 4.250.000</strong>
+            <!-- novos valores IPTU / condomínio -->
+            <div class="hero-bills">
+              <span>IPTU - R$ 2000</span>
+              <span>Condomínio - R$ 500</span>
+            </div>
+            <div class="hero-stats">
+              <span>3 Quartos</span>
+              <span>3 Banheiros</span>
+              <span>2 Vagas</span>
+              <span>145 m²</span>
+            </div>
+          </div>
+          <div class="hero-actions">
+            <!-- REMOVIDO o botão azul grande "Entrar em contato" daqui -->
+            <button class="favorite" type="button">♡ Favoritar</button>
+            <button class="map" type="button">Ver no mapa</button>
+          </div>
+        </div>
+      </section>
+
+      <section class="detail-main">
+        <article class="detail-card">
+          <h2>Sobre este imóvel</h2>
+          <p>
+            Apartamento alto padrão totalmente mobiliado, localizado em frente
+            ao mar com vista panorâmica para a Baía Norte. Planta inteligente
+            com ambientes integrados, acabamento premium e iluminação natural
+            abundante.
+          </p>
+          <ul class="detail-features">
+            <li>Living integrado à varanda gourmet envidraçada</li>
+            <li>
+              Cozinha planejada com ilha central e eletrodomésticos embutidos
+            </li>
+            <li>Suíte master com closet e banheiro com dupla cuba</li>
+            <li>Projeto luminotécnico e climatização em todos os ambientes</li>
+          </ul>
+        </article>
+
+        <article class="detail-card">
+          <h2>Diferenciais do condomínio</h2>
+          <div class="feature-grid">
+            <span>Portaria e segurança 24h</span>
+            <span>Piscina aquecida com borda infinita</span>
+            <span>Academia completa</span>
+            <span>Salão gourmet e espaço coworking</span>
+            <span>Vagas para visitantes</span>
+            <span>Depósito privativo</span>
+          </div>
+        </article>
+
+        <article class="detail-card">
+          <h2>Localização</h2>
+          <p>
+            Situado no coração de Florianópolis, o empreendimento oferece fácil
+            acesso à Av. Beira-Mar, universidades, restaurantes e ao centro
+            financeiro da cidade. Região com ampla oferta de serviços, lazer e
+            mobilidade.
+          </p>
+          <div class="detail-map-placeholder" aria-hidden="true">
+            Mapa em breve
+          </div>
+        </article>
+      </section>
+
+      <aside class="detail-sidebar">
+        <div class="detail-card contact-card">
+          <h2>Fale com o anunciante</h2>
+          <p class="contact-subtitle">Tire dúvidas e agende uma visita</p>
+          <button class="primary" type="button">Entrar em contato</button>
+          <button class="secondary" type="button">Conversar no WhatsApp</button>
+        </div>
+
+        <div class="detail-card tour-card">
+          <h2>Agende uma visita</h2>
+          <p>Escolha a melhor data para conhecer o imóvel pessoalmente.</p>
+          <button class="primary" type="button">Solicitar visita</button>
+        </div>
+      </aside>
+    </main>
+
+    <button class="help">AJUDA</button>
+    <script src="script.js"></script>
+  </body>
+</html>
