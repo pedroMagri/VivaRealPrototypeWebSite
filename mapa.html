@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <title>VivaReal – Explorar imóveis no mapa</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body class="map-page" data-map-page>
+  <header class="topbar">
+    <a class="brand" href="index.html">
+      <div class="logo-simbolo" aria-hidden="true"></div>
+      <span class="logo-text">VivaReal</span>
+    </a>
+    <div class="actions">
+      <button class="ghost">Criar Conta</button>
+      <button class="ghost">Entrar</button>
+    </div>
+  </header>
+
+  <nav class="result-tabs" aria-label="Alternar tipo de busca no mapa">
+    <a class="tab" data-map-tab="comprar" href="mapa.html">Comprar</a>
+    <a class="tab" data-map-tab="alugar" href="mapa.html">Alugar</a>
+  </nav>
+
+  <main class="map-layout">
+    <section class="map-board">
+      <header class="map-board-header">
+        <div>
+          <p class="map-chip">Modo <span data-map-heading>Comprar</span></p>
+          <h1 data-map-location>Florianópolis - SC, Brasil</h1>
+          <p class="map-description">Visualize os agrupamentos e encontre imóveis rapidamente na região.</p>
+        </div>
+        <a class="ghost-rounded" data-back-to-results href="comprar-resultados.html">Voltar para lista</a>
+      </header>
+
+      <div class="map-visual" role="region" aria-label="Mapa com agrupamentos de imóveis">
+        <img src="https://images.unsplash.com/photo-1500534314209-a25ddb2bd429?auto=format&fit=crop&w=1400&q=80" alt="Mapa ilustrado da cidade" />
+        <div class="map-clusters" data-map-clusters></div>
+      </div>
+    </section>
+
+    <aside class="map-sidebar" aria-live="polite">
+      <div class="map-sidebar-header">
+        <p class="map-chip is-light">Região selecionada</p>
+        <h2 data-region-title>Centro</h2>
+        <p class="map-sidebar-subtitle" data-region-subtitle>Selecione um agrupamento no mapa para ver os imóveis.</p>
+      </div>
+      <div class="map-properties" data-region-properties></div>
+    </aside>
+  </main>
+
+  <button class="help">AJUDA</button>
+  <script src="script.js"></script>
+</body>
+</html>
