@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <title>VivaReal – Imóveis no mapa</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body class="results-page map-results-page" data-results="mapa">
+  <header class="topbar">
+    <a class="brand" href="index.html">
+      <div class="logo-simbolo" aria-hidden="true"></div>
+      <span class="logo-text">VivaReal</span>
+    </a>
+    <div class="actions">
+      <button class="ghost">Criar Conta</button>
+      <button class="ghost">Entrar</button>
+    </div>
+  </header>
+
+  <nav class="result-tabs" aria-label="Alternar tipo de busca">
+    <a class="tab" data-map-tab="comprar" href="comprar-resultados.html">Comprar</a>
+    <a class="tab" data-map-tab="alugar" href="alugar-resultados.html">Alugar</a>
+  </nav>
+
+  <main class="results-layout map-results-layout">
+    <aside class="filters-panel" aria-label="Filtros de busca">
+      <div class="filter-group">
+        <h3 class="filter-title">Tipo de imóvel</h3>
+        <div class="filter-options">
+          <button type="button" class="filter-pill is-active">Apartamento</button>
+          <button type="button" class="filter-pill">Casa</button>
+          <button type="button" class="filter-pill">Cobertura</button>
+          <button type="button" class="filter-pill">Kitnet/Studio</button>
+          <button type="button" class="filter-pill">Sala comercial</button>
+        </div>
+      </div>
+
+      <div class="filter-group">
+        <h3 class="filter-title">Valor</h3>
+        <div class="filter-range">
+          <input type="number" placeholder="Mín" min="0">
+          <span>até</span>
+          <input type="number" placeholder="Máx" min="0">
+        </div>
+      </div>
+
+      <div class="filter-group">
+        <h3 class="filter-title">Quartos</h3>
+        <div class="filter-options">
+          <button type="button" class="filter-pill is-active">2</button>
+          <button type="button" class="filter-pill">1</button>
+          <button type="button" class="filter-pill">3</button>
+          <button type="button" class="filter-pill">4+</button>
+        </div>
+      </div>
+
+      <div class="filter-group">
+        <h3 class="filter-title">Banheiros</h3>
+        <div class="filter-options">
+          <button type="button" class="filter-pill is-active">2</button>
+          <button type="button" class="filter-pill">1</button>
+          <button type="button" class="filter-pill">3+</button>
+        </div>
+      </div>
+
+      <div class="filter-group">
+        <h3 class="filter-title">Vagas de garagem</h3>
+        <div class="filter-options">
+          <button type="button" class="filter-pill">1</button>
+          <button type="button" class="filter-pill is-active">2</button>
+          <button type="button" class="filter-pill">3+</button>
+        </div>
+      </div>
+
+      <button class="secondary" type="button" data-clear-filters>Limpar filtros</button>
+      <button class="map" type="button" disabled>Mapa</button>
+      <button class="alert" type="button">Criar Alerta</button>
+    </aside>
+
+    <section class="map-panel">
+      <header class="map-header">
+        <div>
+          <h1 class="map-title">
+            <span data-map-context-label>Comprar</span>
+            <span class="map-title-separator">em</span>
+            <span data-summary-location>Florianópolis - SC, Brasil</span>
+          </h1>
+          <p class="search-subtitle" data-summary-subtitle>Imóveis destacados no mapa</p>
+        </div>
+        <div class="map-header-actions">
+          <button class="alert" type="button">Criar Alerta</button>
+          <button class="ghost-rounded" type="button" data-map-link="comprar-resultados.html" data-map-return>Ver lista</button>
+        </div>
+      </header>
+
+      <div class="map-view" aria-label="Mapa com imóveis disponíveis">
+        <div class="map-canvas" role="img" aria-label="Mapa da região selecionada"></div>
+
+        <div class="map-overlay">
+          <div class="map-overlay-header">
+            <p class="map-overlay-location">Imóveis próximos a <strong data-map-location>Florianópolis - SC, Brasil</strong></p>
+            <span class="map-overlay-context" data-map-context-label>Comprar</span>
+          </div>
+
+          <div class="map-overlay-list">
+            <article class="map-overlay-card">
+              <div class="map-overlay-media">
+                <img src="https://images.unsplash.com/photo-1580587771525-78b9dba3b914?auto=format&fit=crop&w=400&q=60" alt="Prédio residencial moderno com iluminação noturna" />
+              </div>
+              <div class="map-overlay-content">
+                <strong class="map-overlay-price">R$ 1.450.000</strong>
+                <p class="map-overlay-address">R. Dr. Antônio Luiz Moura Gonzaga, 1400, Rio Tavares</p>
+                <ul class="map-overlay-stats">
+                  <li>3 Quartos</li>
+                  <li>2 Banheiros</li>
+                  <li>2 Vagas</li>
+                </ul>
+                <div class="map-card-actions">
+                  <a class="see-more" href="imovel-detalhe.html">Ver detalhes</a>
+                  <button class="contact" type="button">Entrar em contato</button>
+                </div>
+              </div>
+            </article>
+
+            <article class="map-overlay-card">
+              <div class="map-overlay-media">
+                <img src="https://images.unsplash.com/photo-1505691723518-36a5ac3be353?auto=format&fit=crop&w=400&q=60" alt="Sala de estar ampla com varanda e vista para o mar" />
+              </div>
+              <div class="map-overlay-content">
+                <strong class="map-overlay-price">R$ 850.000</strong>
+                <p class="map-overlay-address">R. Abílio Costa, 135, Santa Mônica</p>
+                <ul class="map-overlay-stats">
+                  <li>2 Quartos</li>
+                  <li>2 Banheiros</li>
+                  <li>2 Vagas</li>
+                </ul>
+                <div class="map-card-actions">
+                  <a class="see-more" href="imovel-detalhe.html">Ver detalhes</a>
+                  <button class="contact" type="button">Entrar em contato</button>
+                </div>
+              </div>
+            </article>
+
+            <article class="map-overlay-card">
+              <div class="map-overlay-media">
+                <img src="https://images.unsplash.com/photo-1502005097973-6a7082348e28?auto=format&fit=crop&w=400&q=60" alt="Quarto aconchegante com decoração minimalista" />
+              </div>
+              <div class="map-overlay-content">
+                <strong class="map-overlay-price">R$ 550.000</strong>
+                <p class="map-overlay-address">R. Des. Pedro Silva, 900, Coqueiros</p>
+                <ul class="map-overlay-stats">
+                  <li>2 Quartos</li>
+                  <li>2 Banheiros</li>
+                  <li>1 Vaga</li>
+                </ul>
+                <div class="map-card-actions">
+                  <a class="see-more" href="imovel-detalhe.html">Ver detalhes</a>
+                  <button class="contact" type="button">Entrar em contato</button>
+                </div>
+              </div>
+            </article>
+
+            <article class="map-overlay-card">
+              <div class="map-overlay-media">
+                <img src="https://images.unsplash.com/photo-1568605114967-8130f3a36994?auto=format&fit=crop&w=400&q=60" alt="Vista aérea de um condomínio residencial" />
+              </div>
+              <div class="map-overlay-content">
+                <strong class="map-overlay-price">R$ 2.230.000</strong>
+                <p class="map-overlay-address">Av. Beira-Mar Norte, 3000, Centro</p>
+                <ul class="map-overlay-stats">
+                  <li>4 Quartos</li>
+                  <li>4 Banheiros</li>
+                  <li>3 Vagas</li>
+                </ul>
+                <div class="map-card-actions">
+                  <a class="see-more" href="imovel-detalhe.html">Ver detalhes</a>
+                  <button class="contact" type="button">Entrar em contato</button>
+                </div>
+              </div>
+            </article>
+          </div>
+        </div>
+
+        <button class="map-help" type="button">Ajuda</button>
+      </div>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>

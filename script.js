@@ -133,7 +133,83 @@ function setupFilterPills() {
   });
 }
 
+function hydrateMapPage() {
+  if (!document.body.classList.contains('map-results-page')) return;
+
+  const params = new URLSearchParams(window.location.search);
+  const context = params.get('context') === 'alugar' ? 'alugar' : 'comprar';
+
+  const tabs = document.querySelectorAll('[data-map-tab]');
+  tabs.forEach((tab) => {
+    const isActive = tab.dataset.mapTab === context;
+    tab.classList.toggle('active', isActive);
+  });
+
+  const contextLabels = document.querySelectorAll('[data-map-context-label]');
+  contextLabels.forEach((label) => {
+    label.textContent = context === 'alugar' ? 'Alugar' : 'Comprar';
+  });
+
+  const summaryLocationTarget = document.querySelector('[data-summary-location]');
+  const resolvedLocation = summaryLocationTarget
+    ? summaryLocationTarget.textContent.trim()
+    : '';
+  const overlayLocationTarget = document.querySelector('[data-map-location]');
+
+  if (overlayLocationTarget && resolvedLocation) {
+    overlayLocationTarget.textContent = resolvedLocation;
+  }
+
+  const returnButton = document.querySelector('[data-map-return]');
+  if (returnButton) {
+    const targetPage = context === 'alugar' ? 'alugar-resultados.html' : 'comprar-resultados.html';
+    returnButton.dataset.mapLink = targetPage;
+    returnButton.dataset.mapContext = context;
+  }
+}
+
+function setupMapLinks() {
+  const triggers = document.querySelectorAll('[data-map-link]');
+  if (!triggers.length) return;
+
+  triggers.forEach((trigger) => {
+    trigger.addEventListener('click', (event) => {
+      if (trigger.tagName === 'A') {
+        event.preventDefault();
+      }
+
+      const params = new URLSearchParams(window.location.search);
+
+      const triggerContext = trigger.dataset.mapContext;
+      const pageContext = document.body.dataset.results;
+
+      if (triggerContext) {
+        params.set('context', triggerContext);
+      } else if (pageContext && pageContext !== 'mapa') {
+        params.set('context', pageContext);
+      } else if (!params.has('context')) {
+        params.set('context', 'comprar');
+      }
+
+      const targetPage = trigger.dataset.mapLink || 'mapa.html';
+      const destinationParams = new URLSearchParams(params);
+      const isMapDestination = targetPage.includes('mapa');
+
+      if (!isMapDestination) {
+        destinationParams.delete('context');
+      }
+
+      const queryString = destinationParams.toString();
+      const destination = queryString ? `${targetPage}?${queryString}` : targetPage;
+
+      window.location.href = destination;
+    });
+  });
+}
+
 document.addEventListener('DOMContentLoaded', () => {
   hydrateResultsPage();
   setupFilterPills();
+  hydrateMapPage();
+  setupMapLinks();
 });
