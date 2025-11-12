@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <title>VivaReal – Alugar</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand">
+      <div class="logo-simbolo" aria-hidden="true"></div>
+      <span class="logo-text">VivaReal</span>
+    </div>
+    <div class="actions">
+      <button class="ghost">Criar Conta</button>
+      <button class="ghost">Entrar</button>
+    </div>
+  </header>
+
+  <main class="form-screen">
+    <form class="card" id="formAlugar">
+      <div class="card-header">
+        <a class="back" href="index.html" aria-label="Voltar">←</a>
+        <h2>Alugar</h2>
+      </div>
+
+      <label class="field">
+        <span class="field-label">Localização do Imóvel</span>
+        <input type="text" id="vnd-local" placeholder="Busque pela localização do imóvel">
+      </label>
+
+      <label class="field">
+        <span class="field-label">Tipo de Imóvel</span>
+        <select id="vnd-tipo">
+          <option value="">Qualquer tipo de imóvel</option>
+          <option value="casa">Casa</option>
+          <option value="apartamento">Apartamento</option>
+          <option value="cobertura">Cobertura</option>
+          <option value="terreno">Terreno</option>
+          <option value="sala-comercial">Sala comercial</option>
+        </select>
+      </label>
+
+      <div class="actions-row">
+        <button type="submit" class="primary">Buscar</button>
+      </div>
+    </form>
+  </main>
+
+  <button class="help">AJUDA</button>
+
+  <script src="script.js"></script>
+</body>
+</html>
